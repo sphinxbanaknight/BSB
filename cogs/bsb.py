@@ -1,4 +1,5 @@
 import discord
+import asyncio
 import random
 from oauth2client import file as oauth_file, client, tools
 from discord.ext import commands, tasks
