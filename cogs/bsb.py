@@ -50,6 +50,7 @@ class Bsb(commands.Cog):
 
         cost = []
         MAX_SIM = arglist[0]
+        print(arglist[0])
         for x in range(0, MAX_SIM):
             cost.append(0)
         trials = []
