@@ -1,22 +1,6 @@
 import discord
-import random
 import os
-import json
-import gspread
-import pprint
 from oauth2client import file as oauth_file, client, tools
-from apiclient.discovery import build
-from httplib2 import Http
-import time
-import datetime
-import pytz
-import asyncio
-
-
-from pytz import timezone
-from datetime import datetime, timedelta
-
-from oauth2client.service_account import ServiceAccountCredentials
 from discord.ext import commands, tasks
 ################ Channel, Server, and User IDs ###########################
 sphinx_id = 108381986166431744
