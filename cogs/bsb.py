@@ -1,8 +1,9 @@
 import discord
 import asyncio
 import random
-from oauth2client import file as oauth_file, client, tools
+#from oauth2client import file as oauth_file, client, tools
 from discord.ext import commands, tasks
+import os
 
 ################ Channel, Server, and User IDs ###########################
 sphinx_id = 108381986166431744

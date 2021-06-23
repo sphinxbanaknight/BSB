@@ -4,7 +4,7 @@ import os
 import json
 import gspread
 import pprint
-from oauth2client import file as oauth_file, client, tools
+#from oauth2client import file as oauth_file, client, tools
 from apiclient.discovery import build
 from httplib2 import Http
 import time
@@ -60,15 +60,6 @@ async def on_ready():
     print('Bot is online.')
     await client.change_presence(status=discord.Status.dnd, activity=discord.Game('Getting scolded by Cai'))
 
-
-@client.event
-async def on_member_join(member):
-    try:
-        role = discord.utils.get(member.guild.roles, id=703643328406880287)
-    except AttributeError as e:
-        print(f'autorole returned as {e}')
-        role = discord.utils.get(member.guild.roles, name="new recruit")
-    await member.add_roles(role)
 
 
 @client.command()
