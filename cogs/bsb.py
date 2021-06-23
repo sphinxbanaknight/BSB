@@ -50,7 +50,6 @@ class Bsb(commands.Cog):
 
         cost = []
         MAX_SIM = int(arglist[0])
-        print(arglist[0])
         for x in range(0, MAX_SIM):
             cost.append(0)
         trials = []
@@ -62,7 +61,6 @@ class Bsb(commands.Cog):
         refine = 7
 
         while n < MAX_SIM:
-            await ctx.send("Hi")
             RNG = random.random()
             if refine == 7:
                 if RNG >= 0 and RNG <= 0.4:
