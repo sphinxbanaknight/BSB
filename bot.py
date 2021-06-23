@@ -92,7 +92,7 @@ async def reload(ctx, extension):
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
-        client.load_extension(f'cogs.{filename}')
+        client.load_extension(f'cogs.{filename.replace('.py', '')}')
 
 @client.event
 async def on_command_error(ctx, error):
