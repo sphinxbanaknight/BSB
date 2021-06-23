@@ -17,6 +17,7 @@ bk_ann = 695801936095740024 #BK #announcement
 c_bot = 800129405350707200
 botinit_id = [sk_bot, bk_bot, c_bot]
 
+
 class Bsb(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -24,6 +25,7 @@ class Bsb(commands.Cog):
     @commands.command()
     async def ping(ctx):
         await ctx.channel.send(f"{client.latency}")
+
 
 def setup(client):
     client.add_cog(Bsb(client))
