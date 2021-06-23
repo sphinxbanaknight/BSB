@@ -49,7 +49,7 @@ class Bsb(commands.Cog):
             return
 
         cost = []
-        MAX_SIM = arglist[0]
+        MAX_SIM = int(arglist[0])
         print(arglist[0])
         for x in range(0, MAX_SIM):
             cost.append(0)
@@ -122,7 +122,7 @@ class Bsb(commands.Cog):
             return
 
         cost = []
-        MAX_SIM = arglist[0]
+        MAX_SIM = int(arglist[0])
         for x in range(0, MAX_SIM):
             cost.append(0)
         trials = []
@@ -188,7 +188,7 @@ class Bsb(commands.Cog):
             return
 
         cost = []
-        MAX_SIM = arglist[0]
+        MAX_SIM = int(arglist[0])
         for x in range(0, MAX_SIM):
             cost.append(0)
         trials = []
