@@ -88,7 +88,7 @@ class Bsb(commands.Cog):
                     ctr = 0
                     refine = 7
                     n += 1
-
+        await ctx.send("Hi")
         totalCostHD = 0
         totalTrialHD = 0
         averageCostHD = 0
