@@ -1,6 +1,38 @@
-import math
+import discord
 import random
+import os
 from itertools import repeat
+import pprint
+import json
+import gspread
+import pprint
+#import models
+import io
+from oauth2client import file as oauth_file, client, tools
+from apiclient.discovery import build
+from httplib2 import Http
+import time
+import datetime
+import pytz
+import asyncio
+from pytz import timezone
+from oauth2client.service_account import ServiceAccountCredentials
+from discord.ext import commands, tasks
+
+################ Channel, Server, and User IDs ###########################
+sphinx_id = 108381986166431744
+sk_server = 401186250335322113
+bk_server = 691130488483741756
+c_server = 800129405350707200
+servers = [sk_server, bk_server, c_server]
+
+sk_bot = 401212001239564288
+bk_bot = 691205255664500757
+bk_ann = 695801936095740024 #BK #announcement
+c_bot = 800129405350707200
+botinit_id = [sk_bot, bk_bot, c_bot]
+
+
 random.seed(random.randint(0,1000))
 
 MAX_SIM = 1 * 10 ** 2
@@ -13,7 +45,7 @@ for x in range(0, MAX_SIM):
 BSB = 5.8 * 10 ** 6
 Enriched = 500 * 10 ** 3
 HD = 1.5 * 10 ** 6
-#refine = 2k
+'''
 def zeroOut():
     cost.clear()
     trials.clear()
@@ -131,9 +163,16 @@ def refineHDBSB(n):
                     else:
                         cost[n] += 2 * BSB + Enriched
                     ctr += 1
-                    continue
+                    continue'''
 
-if __name__ == "__main__":
+class Bsb(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+
+    @commands.command()
+    async def ping(ctx):
+        await ctx.channel.send(f"{client.latency}")
+        '''
     zeroOut()
     refineBSB(0)
     totalCostBSB = 0
@@ -181,4 +220,4 @@ if __name__ == "__main__":
     print(f'Average cost for HD+BSB from +7 to +9: {averageCostHDBSB}')
     averageTrialHDBSB = totalTrialHDBSB / MAX_SIM
     # print(trials)
-    print(f'Average trial for HD+BSB from +7 to +9: {averageTrialHDBSB}')
+    print(f'Average trial for HD+BSB from +7 to +9: {averageTrialHDBSB}')'''
