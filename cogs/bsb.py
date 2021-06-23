@@ -62,6 +62,7 @@ class Bsb(commands.Cog):
         refine = 7
 
         while n < MAX_SIM:
+            await ctx.send("Hi")
             RNG = random.random()
             if refine == 7:
                 if RNG >= 0 and RNG <= 0.4:
@@ -88,7 +89,7 @@ class Bsb(commands.Cog):
                     ctr = 0
                     refine = 7
                     n += 1
-        await ctx.send("Hi")
+
         totalCostHD = 0
         totalTrialHD = 0
         averageCostHD = 0
