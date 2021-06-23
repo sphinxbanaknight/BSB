@@ -41,7 +41,7 @@ authorized_id = [sphinx_id, ardi_id, kriss_id, ken_id, jude_id, cell_id, glock_i
 dev_id = [sphinx_id]
 
 prefix = ["/"]
-description = "A bot for sheet+discord linking/automation."
+description = "A bot for refine simulation."
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=prefix, description=description, intents=intents)
 
@@ -81,7 +81,7 @@ async def on_ready():
     #        botinitbkann = channel
 
     print('Bot is online.')
-    await client.change_presence(status=discord.Status.dnd, activity=discord.Game('Getting scolded by Ardi'))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Game('Getting scolded by Cai'))
 
 
 @client.command()
