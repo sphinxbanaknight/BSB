@@ -157,6 +157,9 @@ class Bsb(commands.Cog):
     @commands.command()
     async def ping(ctx):
         await ctx.channel.send(f"{client.latency}")
+
+def setup(client):
+    client.add_cog(Bsb(client))
         '''
     zeroOut()
     refineBSB(0)
@@ -206,5 +209,4 @@ class Bsb(commands.Cog):
     averageTrialHDBSB = totalTrialHDBSB / MAX_SIM
     # print(trials)
     print(f'Average trial for HD+BSB from +7 to +9: {averageTrialHDBSB}')'''
-def setup(client):
-    client.add_cog(Bsb(client))
+
