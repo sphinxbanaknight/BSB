@@ -74,10 +74,6 @@ async def on_ready():
         if channel.id == sk_bot:
             botinitsk = channel
             break
-    for channel in cresence.channels:
-        if channel.id == c_bot:
-            botinitc = channel
-            break
     # for channel in burger.channels:
     #    if channel.id == bk_bot:
     #        botinitbk = channel

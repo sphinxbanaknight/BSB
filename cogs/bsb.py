@@ -24,7 +24,7 @@ class Bsb(commands.Cog):
         self.client = client
 
     @commands.command()
-    async def ping(ctx):
+    async def ping(self, ctx):
         await ctx.channel.send(f"{client.latency}")
 
 
