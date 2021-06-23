@@ -2,6 +2,10 @@ import discord
 import os
 from oauth2client import file as oauth_file, client, tools
 from discord.ext import commands, tasks
+from cogs.cutils import util
+from cogs.cutils import md
+
+
 ################ Channel, Server, and User IDs ###########################
 sphinx_id = 108381986166431744
 sk_server = 401186250335322113
