@@ -93,7 +93,7 @@ async def reload(ctx, extension):
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         try:
-            cog = f"cogs.{filename.replace(".py", "")}"
+            cog = f"cogs.{filename}"
             client.load_extension(cog)
         except Exception as e:
             print(f"{cog} Can not be loaded")
