@@ -1,6 +1,23 @@
+ 542 lines (473 sloc) 21.9 KB
 import discord
+import random
 import os
+import json
+import gspread
+import pprint
 from oauth2client import file as oauth_file, client, tools
+from apiclient.discovery import build
+from httplib2 import Http
+import time
+import datetime
+import pytz
+import asyncio
+
+
+from pytz import timezone
+from datetime import datetime, timedelta
+
+from oauth2client.service_account import ServiceAccountCredentials
 from discord.ext import commands, tasks
 
 
@@ -75,7 +92,7 @@ async def reload(ctx, extension):
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
-        client.load_extension(f'cogs/{filename[-3]}')
+        client.load_extension(f'cogs.{filename[-3]}')
 
 @client.event
 async def on_command_error(ctx, error):
