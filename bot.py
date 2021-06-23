@@ -1,4 +1,3 @@
- 542 lines (473 sloc) 21.9 KB
 import discord
 import random
 import os
