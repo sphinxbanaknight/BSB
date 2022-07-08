@@ -83,7 +83,7 @@ class Bsb(commands.Cog):
                         ctr += 1
                         continue
                 elif refine == 12 or refine == 13:
-                    if 0 <= RNG <= 0.5:
+                    if 0 <= RNG <= 0.3:
                         cost[n] += HD
                         refine += 1
                         ctr += 1
