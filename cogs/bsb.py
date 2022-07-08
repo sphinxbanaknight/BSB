@@ -7,7 +7,7 @@ import os
 
 BSB = 5.8 * 10 ** 6
 Enriched = 500 * 10 ** 3
-HD = 1.5 * 10 ** 6
+HD = 4 * 10 ** 6
 
 ################ Channel, Server, and User IDs ###########################
 sphinx_id = 108381986166431744
@@ -58,22 +58,42 @@ class Bsb(commands.Cog):
 
         ctr = 0
         n = 0
-        refine = 7
+        refine = 10
 
         while n < MAX_SIM:
             RNG = random.random()
-            if refine == 7:
-                if RNG >= 0 and RNG <= 0.4:
-                    cost[n] += BSB + Enriched
+            if refine == 10:
+                if RNG >= 0 and RNG <= 0.8:
+                    cost[n] += HD
                     refine += 1
                     ctr += 1
                 else:
-                    cost[n] += BSB + Enriched
+                    cost[n] += HD
                     ctr += 1
                     continue
             else:
-                if refine != 9:
-                    if RNG >= 0 and RNG <= 0.4:
+                if refine == 11:
+                    if RNG >= 0 and RNG <= 0.5:
+                        cost[n] += HD
+                        refine += 1
+                        ctr += 1
+                    else:
+                        refine -= 1
+                        cost[n] += HD
+                        ctr += 1
+                        continue
+                elif refine == 12 or refine == 13:
+                    if 0 <= RNG <= 0.5:
+                        cost[n] += HD
+                        refine += 1
+                        ctr += 1
+                    else:
+                        refine -= 1
+                        cost[n] += HD
+                        ctr += 1
+                        continue
+                elif refine == 14:
+                    if 0 <= RNG <= 0.2:
                         cost[n] += HD
                         refine += 1
                         ctr += 1
@@ -85,7 +105,7 @@ class Bsb(commands.Cog):
                 else:
                     trials[n] = ctr
                     ctr = 0
-                    refine = 7
+                    refine = 10
                     n += 1
 
         totalCostHD = 0
@@ -97,10 +117,10 @@ class Bsb(commands.Cog):
             totalTrialHD += trials[i]
         averageCostHD = totalCostHD / MAX_SIM
         await ctx.send(f"Based on {MAX_SIM} simulations.")
-        await ctx.send(f'Average cost for HD from +7 to +9: {averageCostHD}')
+        await ctx.send(f'Average cost for HD from +10 to +15: {averageCostHD}')
         averageTrialHD = totalTrialHD / MAX_SIM
         # print(trials)
-        await ctx.send(f'Average trial for HD from +7 to +9: {averageTrialHD}')
+        await ctx.send(f'Average trial for HD from +10 to +15: {averageTrialHD}')
 
     @commands.command()
     async def refineBSB(self, ctx, *, arguments):
