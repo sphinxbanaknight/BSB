@@ -9,6 +9,7 @@ BSB = 5.8 * 10 ** 6
 Enriched = 500 * 10 ** 3
 HD = 4 * 10 ** 6
 baseRefine = 7
+endRefine = 8
 
 ################ Channel, Server, and User IDs ###########################
 sphinx_id = 108381986166431744
@@ -139,7 +140,7 @@ class Bsb(commands.Cog):
                 # else:
                     trials[n] = ctr
                     ctr = 0
-                    refine = 10
+                    refine = endRefine
                     n += 1
         totalCostHD = 0
         totalTrialHD = 0
