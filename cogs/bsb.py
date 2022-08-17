@@ -8,6 +8,7 @@ import os
 BSB = 5.8 * 10 ** 6
 Enriched = 500 * 10 ** 3
 HD = 4 * 10 ** 6
+baseRefine = 7
 
 ################ Channel, Server, and User IDs ###########################
 sphinx_id = 108381986166431744
@@ -33,6 +34,7 @@ class Bsb(commands.Cog):
 
     @commands.command()
     async def refineHD(self, ctx, *, arguments):
+        refine = baseRefine
         channel = ctx.message.channel
         commander = ctx.author
         commander_name = commander.name
@@ -82,36 +84,38 @@ class Bsb(commands.Cog):
                         cost[n] += HD
                         ctr += 1
                         continue
-                elif refine == 9:
-                    if 0 <= RNG <= 0.35:
-                        cost[n] += HD
-                        refine += 1
-                        ctr += 1
-                    else:
-                        refine -= 1
-                        cost[n] += HD
-                        ctr += 1
-                        continue
-                elif refine == 10:
-                    if 0 <= RNG <= 0.2:
-                        cost[n] += HD
-                        refine += 1
-                        ctr += 1
-                    else:
-                        refine -= 1
-                        cost[n] += HD
-                        ctr += 1
-                        continue
-                elif refine == 11:
-                    if 0 <= RNG <= 0.2:
-                        cost[n] += HD
-                        refine += 1
-                        ctr += 1
-                    else:
-                        refine -= 1
-                        cost[n] += HD
-                        ctr += 1
-                        continue
+                # elif refine == 9:
+                #     if 0 <= RNG <= 0.35:
+                #         cost[n] += HD
+                #         refine += 1
+                #         ctr += 1
+                #     else:
+                #         refine -= 1
+                #         cost[n] += HD
+                #         ctr += 1
+                #         continue
+                # elif refine == 10:
+                #     if 0 <= RNG <= 0.2:
+                #         cost[n] += HD
+                #         refine += 1
+                #         ctr += 1
+                #     else:
+                #         refine -= 1
+                #         cost[n] += HD
+                #         ctr += 1
+                #         continue
+                # elif refine == 11:
+                #     if 0 <= RNG <= 0.2:
+                #         cost[n] += HD
+                #         refine += 1
+                #         ctr += 1
+                #     else:
+                #         refine -= 1
+                #         cost[n] += HD
+                #         ctr += 1
+                #         continue
+
+                ########################################
                 # elif refine == 12 or refine == 13:
                 #     if 0 <= RNG <= 0.3:
                 #         cost[n] += HD
@@ -146,10 +150,10 @@ class Bsb(commands.Cog):
             totalTrialHD += trials[i]
         averageCostHD = totalCostHD / MAX_SIM
         await ctx.send(f"Based on {MAX_SIM} simulations.")
-        await ctx.send(f'Average cost for HD from +7 to +12: {averageCostHD}')
+        await ctx.send(f'Average cost for HD from {baseRefine} to {refine}: {averageCostHD}')
         averageTrialHD = totalTrialHD / MAX_SIM
         # print(trials)
-        await ctx.send(f'Average trial for HD from +7 to +12: {averageTrialHD}')
+        await ctx.send(f'Average trial for HD from {baseRefine} to {refine}: {averageTrialHD}')
 
     @commands.command()
     async def refineBSB(self, ctx, *, arguments):
