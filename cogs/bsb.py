@@ -74,16 +74,16 @@ class Bsb(commands.Cog):
                     ctr += 1
                     continue
             else:
-                if refine == 8:
-                    if 0 <= RNG <= 0.5:
-                        cost[n] += HD
-                        refine += 1
-                        ctr += 1
-                    else:
-                        refine -= 1
-                        cost[n] += HD
-                        ctr += 1
-                        continue
+                # if refine == 8:
+                #     if 0 <= RNG <= 0.5:
+                #         cost[n] += HD
+                #         refine += 1
+                #         ctr += 1
+                #     else:
+                #         refine -= 1
+                #         cost[n] += HD
+                #         ctr += 1
+                #         continue
                 # elif refine == 9:
                 #     if 0 <= RNG <= 0.35:
                 #         cost[n] += HD
@@ -136,7 +136,7 @@ class Bsb(commands.Cog):
                 #         cost[n] += HD
                 #         ctr += 1
                 #         continue
-                else:
+                # else:
                     trials[n] = ctr
                     ctr = 0
                     refine = 10
