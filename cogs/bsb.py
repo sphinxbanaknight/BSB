@@ -146,10 +146,10 @@ class Bsb(commands.Cog):
             totalTrialHD += trials[i]
         averageCostHD = totalCostHD / MAX_SIM
         await ctx.send(f"Based on {MAX_SIM} simulations.")
-        await ctx.send(f'Average cost for HD from +10 to +15: {averageCostHD}')
+        await ctx.send(f'Average cost for HD from +7 to +12: {averageCostHD}')
         averageTrialHD = totalTrialHD / MAX_SIM
         # print(trials)
-        await ctx.send(f'Average trial for HD from +10 to +15: {averageTrialHD}')
+        await ctx.send(f'Average trial for HD from +7 to +12: {averageTrialHD}')
 
     @commands.command()
     async def refineBSB(self, ctx, *, arguments):
