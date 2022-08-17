@@ -62,8 +62,8 @@ class Bsb(commands.Cog):
 
         while n < MAX_SIM:
             RNG = random.random()
-            if refine == 10:
-                if RNG >= 0 and RNG <= 0.8:
+            if refine == 7:
+                if 0 <= RNG <= 0.6:
                     cost[n] += HD
                     refine += 1
                     ctr += 1
@@ -72,8 +72,8 @@ class Bsb(commands.Cog):
                     ctr += 1
                     continue
             else:
-                if refine == 11:
-                    if RNG >= 0 and RNG <= 0.5:
+                if refine == 8:
+                    if 0 <= RNG <= 0.5:
                         cost[n] += HD
                         refine += 1
                         ctr += 1
@@ -82,8 +82,8 @@ class Bsb(commands.Cog):
                         cost[n] += HD
                         ctr += 1
                         continue
-                elif refine == 12 or refine == 13:
-                    if 0 <= RNG <= 0.3:
+                elif refine == 9:
+                    if 0 <= RNG <= 0.35:
                         cost[n] += HD
                         refine += 1
                         ctr += 1
@@ -92,7 +92,7 @@ class Bsb(commands.Cog):
                         cost[n] += HD
                         ctr += 1
                         continue
-                elif refine == 14:
+                elif refine == 10:
                     if 0 <= RNG <= 0.2:
                         cost[n] += HD
                         refine += 1
@@ -102,12 +102,41 @@ class Bsb(commands.Cog):
                         cost[n] += HD
                         ctr += 1
                         continue
+                elif refine == 11:
+                    if 0 <= RNG <= 0.2:
+                        cost[n] += HD
+                        refine += 1
+                        ctr += 1
+                    else:
+                        refine -= 1
+                        cost[n] += HD
+                        ctr += 1
+                        continue
+                # elif refine == 12 or refine == 13:
+                #     if 0 <= RNG <= 0.3:
+                #         cost[n] += HD
+                #         refine += 1
+                #         ctr += 1
+                #     else:
+                #         refine -= 1
+                #         cost[n] += HD
+                #         ctr += 1
+                #         continue
+                # elif refine == 14:
+                #     if 0 <= RNG <= 0.2:
+                #         cost[n] += HD
+                #         refine += 1
+                #         ctr += 1
+                #     else:
+                #         refine -= 1
+                #         cost[n] += HD
+                #         ctr += 1
+                #         continue
                 else:
                     trials[n] = ctr
                     ctr = 0
                     refine = 10
                     n += 1
-
         totalCostHD = 0
         totalTrialHD = 0
         averageCostHD = 0
